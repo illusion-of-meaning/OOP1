@@ -11,12 +11,36 @@ public class Car {
     private String productionCountry;
 
     public Car(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry) {
-        this.brand = brand;
-        this.model = model;
-        this.engineVolume = engineVolume;
-        this.color = color;
-        this.productionYear = productionYear;
-        this.productionCountry = productionCountry;
+        if (brand.isBlank()) {
+            this.brand = null;
+        } else {
+            this.brand = brand;
+        }
+        if (model.isBlank()) {
+            this.model = null;
+        } else {
+            this.model = model;
+        }
+        if (engineVolume == 0.0) {
+            this.engineVolume = 1.5;
+        } else {
+            this.engineVolume = engineVolume;
+        }
+        if (color.isBlank()) {
+            this.color = "белый";
+        } else {
+            this.color = color;
+        }
+        if (productionYear == 0) {
+            this.productionYear = 2000;
+        } else {
+            this.productionYear = productionYear;
+        }
+        if (productionCountry.isBlank()) {
+            this.productionCountry = null;
+        } else {
+            this.productionCountry = productionCountry;
+        }
     }
 
     public String getBrand() {
@@ -65,6 +89,18 @@ public class Car {
 
     public void setProductionCountry(String productionCountry) {
         this.productionCountry = productionCountry;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", engineVolume=" + engineVolume +
+                ", color='" + color + '\'' +
+                ", productionYear=" + productionYear +
+                ", productionCountry='" + productionCountry + '\'' +
+                '}';
     }
 
     @Override

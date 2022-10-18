@@ -12,15 +12,35 @@ public class Person {
 
     public Person(LocalDate dateOfBirthday, String firstName, String city) {
         this.dateOfBirthday = dateOfBirthday;
-        this.firstName = firstName;
-        this.city = city;
+        if (firstName.isBlank()) {
+            this.firstName = "Информация не указана";
+        } else {
+            this.firstName = firstName;
+        }
+        if (city.isBlank()) {
+            this.city = "Информация не указана";
+        } else {
+            this.city = city;
+        }
     }
 
     public Person(LocalDate dateOfBirthday, String firstName, String city, String job) {
         this.dateOfBirthday = dateOfBirthday;
-        this.firstName = firstName;
-        this.city = city;
-        this.job = job;
+        if (firstName.isBlank()) {
+            this.firstName = "Информация не указана";
+        } else {
+            this.firstName = firstName;
+        }
+        if (city.isBlank()) {
+            this.city = "Информация не указана";
+        } else {
+            this.city = city;
+        }
+        if (job.isBlank()) {
+            this.job = "Информация не указана";
+        } else {
+            this.job = job;
+        }
     }
 
     public String getJob() {

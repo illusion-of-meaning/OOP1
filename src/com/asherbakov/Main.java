@@ -55,6 +55,8 @@ public class Main {
                 hyundaiAvante.getEngineVolume(),
                 hyundaiAvante.getProductionYear()
         ));
+        Car emptyCar = new Car("", "", 0.0, "", 0, "");
+        System.out.println(emptyCar);
     }
 
     private static void task1() {
@@ -72,6 +74,9 @@ public class Main {
         dateOfBirthday = LocalDate.parse("1995.06.08", dtf);
         Person person4 = new Person(dateOfBirthday, "Артем", "Москва");
         System.out.println(person4);
+        dateOfBirthday = LocalDate.parse("1995.06.08", dtf);
+        Person person5 = new Person(dateOfBirthday, "", "");
+        System.out.println(person5);
         System.out.println("================================================");
 
         // 1.2
