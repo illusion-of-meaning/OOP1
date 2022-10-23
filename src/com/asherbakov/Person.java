@@ -43,6 +43,30 @@ public class Person {
         }
     }
 
+    public LocalDate getDateOfBirthday() {
+        return dateOfBirthday;
+    }
+
+    public void setDateOfBirthday(LocalDate dateOfBirthday) {
+        if (dateOfBirthday != null) {
+            this.dateOfBirthday = dateOfBirthday;
+        } else {
+            this.dateOfBirthday = LocalDate.MIN;
+        }
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        if (city != null && !city.isBlank()) {
+            this.city = city;
+        } else {
+            this.city = "Информация не указана";
+        }
+    }
+
     public String getJob() {
         return job;
     }
